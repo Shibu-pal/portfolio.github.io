@@ -1,0 +1,563 @@
+/* -----------------------------------------
+   PRO PORTFOLIO CSS - 2026 EDITION
+   Designed for: Interview & Freelancing
+   -----------------------------------------
+*/
+
+/* 1. CSS Variables & Reset */
+:root {
+    --primary-color: #2563eb;       /* Professional Blue */
+    --secondary-color: #3b82f6;     /* Light Blue */
+    --dark-color: #0f172a;          /* Deep Navy */
+    --text-main: #334155;           /* Slate Gray */
+    --text-light: #64748b;
+    --bg-light: #f8fafc;            /* Off White */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-mode {
+    --bg-light: #0f172a;      /* ব্যাকগ্রাউন্ড হবে গাঢ় */
+    --white: #1e293b;         /* কার্ডের কালার হবে হালকা গাঢ় */
+    --text-main: #f1f5f9;      /* টেক্সট হবে সাদাটে */
+    --dark-color: #ffffff;    /* লোগো/টাইটেল হবে সাদা */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* স্লাইডার কন্টেইনার */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 55px;
+}
+
+.theme-switch input {
+    display: none; /* আসল চেকবক্সটি লুকিয়ে রাখা */
+}
+
+/* স্লাইডারের ডিজাইন */
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+    z-index: 2;
+}
+
+/* গোল স্লাইডার */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* চেক করা অবস্থায় ব্যাকগ্রাউন্ড কালার (ডার্ক মোড) */
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+/* গোল বাটনটি ডানে সরে যাবে */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* স্লাইডারের ভেতরের আইকন */
+.icon {
+    font-size: 12px;
+    user-select: none;
+}
+
+.sun { color: #f39c12; }
+.moon { color: #f1c40f; }
+
+/* 2. Reusable Components */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Navigation Bar */
+.navbar {
+    background: var(--white);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    margin-left: 30px;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: var(--primary-color);
+}
+
+/* 4. Hero Section (Home) */
+.hero {
+    height: calc(100vh - 80px);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), 
+                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Resume Section Styling */
+.resume-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.resume-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.resume-icon {
+    fill: var(--bg-light);
+    border-radius: 50%;
+}
+
+.resume-text {
+    flex: 2;
+}
+
+.resume-text h3 {
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.resume-text p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.btn-resume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    padding: 15px 35px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .resume-content {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+/* 5. About Page */
+.about-flex {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.skills-box {
+    flex: 1;
+    min-width: 300px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background: var(--bg-light);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Experience Cards */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.exp-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.exp-card h3 { color: var(--dark-color); margin-bottom: 5px; }
+.exp-card h4 { color: var(--primary-color); font-weight: 500; margin-bottom: 10px; }
+.exp-card .date { font-style: italic; color: var(--text-light); margin-bottom: 15px; }
+.exp-card ul { padding-left: 20px; }
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* 6. Projects Page */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-img {
+    height: 200px;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #94a3b8;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.project-full-info{
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    padding-left: 15px;
+}
+
+/* 7. Contact Page */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.contact-info {
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-info h3 { margin-bottom: 20px; color: var(--secondary-color); }
+
+/* আইকনের সাইজ এবং কালার */
+.social-icon svg {
+    width: 30px;         /* আপনার পছন্দমতো সাইজ দিন */
+    height: 30px;
+    fill: var(--white);
+    /* fill:white; */
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+/* হোভার করলে আইকন বড় হবে এবং কালার চেঞ্জ হবে */
+.social-icon:hover svg {
+    fill: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Floating Sidebar Styling */
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.side-icon {
+    background: var(--dark-color);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-bottom: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
+.side-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--white);
+}
+
+.side-icon:hover {
+    padding-left: 25px; /* মাউস নিলে একটু বামে বড় হবে */
+    background: var(--primary-color);
+}
+
+/* Footer Styling */
+.main-footer {
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: var(--bg-light);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* মোবাইল স্ক্রিনে সাইডবার লুকিয়ে রাখা (ক্লিন লুকের জন্য) */
+@media (max-width: 768px) {
+    .social-sidebar {
+        display: none;
+    }
+}
+
+/* 9. Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 10. Responsive Media Queries */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 2.8rem; }
+    .contact-wrapper { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 0 5%; }
+    .nav-links li a { margin-left: 15px; font-size: 0.9rem; }
+    .section-title { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .about-flex { flex-direction: column; }
+}
