@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Institute Management System | Shibadipta Pal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .case-header {
+            padding: 80px 0 40px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .case-content {
+            padding: 60px 0;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .case-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-top: 10px;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .live-btn {
+            background: #10b981 !important;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" class="active">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="case-header" data-aos="fade-down">
+        <div class="container">
+            <h1>Coaching Institute Management System</h1>
+            <div class="case-meta">
+                <span><strong>Role:</strong> Full Stack Developer (Client Project)</span>
+                <span><strong>Year:</strong> 2026</span>
+                <span><strong>Status:</strong> Live</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="case-content">
+        <div class="container">
+            <div class="case-image-placeholder">
+                <p>[ Insert crystalcareerinstitute.com Screenshot ]</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="main-content" data-aos="fade-right">
+                    <h3>Project Overview</h3>
+                    <p>This project is a comprehensive coaching management platform designed to streamline admission
+                        workflows and internal administrative tasks for educational institutes. Built for a specific
+                        client, the application centralizes operations by providing distinct modules for administrators,
+                        teachers, and students.</p>
+
+                    <h3 style="margin-top: 30px;">The Challenge</h3>
+                    <p>The client required an automated solution to replace manual admission processes and speed up the
+                        distribution of official documents. The primary technical hurdle was managing multiple user
+                        roles (Multi-Auth) while ensuring secure and automated communication channels.</p>
+
+                    <h3 style="margin-top: 30px;">The Solution</h3>
+                    <p>Using the Laravel framework, I implemented several key features to meet these requirements:</p>
+                    <ul class="feature-list">
+                        <li><strong>Multi-Role Authentication:</strong> Created secure and separate portals for Admins,
+                            Teachers, and Students to manage their specific data.</li>
+                        <li><strong>Automated Admit Cards:</strong> Developed a system to automatically generate admit
+                            cards and deliver them to students as PDF attachments via email.</li>
+                        <li><strong>Notice Board Management:</strong> Built an administrative interface for creating and
+                            managing public announcements in real-time.</li>
+                        <li><strong>Directory Management:</strong> Implemented dynamic lists for faculty and student
+                            profiles with role-based data access.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar" data-aos="fade-left">
+                    <div class="sidebar-box">
+                        <h4>Technologies</h4>
+                        <div class="tech-stack">
+                            <span class="skill-item">Laravel</span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">SASS</span>
+                            <span class="skill-item">SMTP/Email API</span>
+                        </div>
+
+                        <h4 style="margin-top: 25px;">Project Links</h4>
+                        <a href="https://crystalcareerinstitute.com" target="_blank" class="btn live-btn"
+                            style="width: 100%; text-align: center; display: block;">
+                            Visit Live Website
+                        </a>
+                        <a href="https://github.com/shibu-pal" target="_blank" class="btn"
+                            style="width: 100%; margin-top: 10px; text-align: center; display: block;">
+                            View Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Built with ❤️ using Laravel.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+
+</html>

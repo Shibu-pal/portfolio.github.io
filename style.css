@@ -142,7 +142,7 @@ input:checked + .slider:before {
     margin: 10px auto;
 }
 
-.btn {
+.btn,.btn-git {
     display: inline-block;
     padding: 12px 28px;
     background: var(--primary-color);
@@ -155,10 +155,17 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,.btn-git:hover {
     background: var(--dark-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-site {
+    width: 100%; 
+    margin-top: 10px; 
+    text-align: center; 
+    background: #10b981;
 }
 
 /* 3. Navigation Bar */

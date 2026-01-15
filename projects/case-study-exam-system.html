@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam System Case Study | Shibadipta Pal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Specific Styles for Case Study */
+        .case-header {
+            padding: 80px 0 40px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .case-content {
+            padding: 60px 0;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .case-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" class="active">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <span class="icon sun">☀️</span>
+                            <span class="icon moon">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="case-header" data-aos="fade-down">
+        <div class="container">
+            <h1>Online Examination System</h1>
+            <div class="case-meta">
+                <span><strong>Role:</strong> Backend Developer (Major Project)</span>
+                <span><strong>Year:</strong> 2023</span>
+                <span><strong>Category:</strong> EdTech / Web App</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="case-content">
+        <div class="container">
+            <div class="case-image-placeholder">
+                <p>[ Insert Screenshot of Exam Dashboard Here ]</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="main-content" data-aos="fade-right">
+                    <h3>Project Overview</h3>
+                    <p>The Online Examination System is a web-based portal designed to conduct automated multiple-choice
+                        tests. Developed as a Major Project for my CST 6th Semester, this application aims to replace
+                        traditional paper-based exams with a streamlined, digital alternative.</p>
+
+                    <h3 style="margin-top: 30px;">The Challenge</h3>
+                    <p>The primary challenge was building a system that could handle timed examinations while providing
+                        instant, accurate feedback to students. We needed a robust way to manage a large pool of
+                        questions and ensure that administrative tasks, like enabling or disabling student accounts,
+                        could be performed easily.</p>
+
+                    <h3 style="margin-top: 30px;">The Solution</h3>
+                    <p>I focused on the core backend architecture using <strong>PHP</strong> and <strong>MySQL</strong>.
+                        Key implementations included:</p>
+                    <ul class="feature-list" style="margin-top: 15px;">
+                        <li><strong>Session Management:</strong> Implemented secure login and session tracking to
+                            prevent unauthorized access to exam materials.</li>
+                        <li><strong>Automated Grading:</strong> Developed a logic that compares student answers against
+                            the database in real-time, delivering instant scores upon completion.</li>
+                        <li><strong>Administrative Control:</strong> Created a comprehensive Admin Panel for question
+                            management (Add/Remove) and user account status control.</li>
+                        <li><strong>Answer Review System:</strong> Built a post-test feature allowing students to review
+                            their responses against correct answers for better learning outcomes.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar" data-aos="fade-left">
+                    <div class="sidebar-box">
+                        <h4>Technologies Used</h4>
+                        <div class="tech-stack">
+                            <span class="skill-item">Core PHP</span>
+                            <span class="skill-item">MySQL (MariaDB)</span>
+                            <span class="skill-item">HTML/CSS</span>
+                            <span class="skill-item">JavaScript</span>
+                        </div>
+                        <h4 style="margin-top: 25px;">Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Timed MCQ Tests</li>
+                            <li>Real-time Scoring</li>
+                            <li>Profile Management</li>
+                            <li>Admin Dashboard</li>
+                        </ul>
+                        <a href="https://github.com/shibu-pal" target="_blank" class="btn"
+                            style="width: 100%; margin-top: 20px; text-align: center;">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Shibadipta Pal</h3>
+                <p>Computer Science Student | Full Stack Developer</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Built with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

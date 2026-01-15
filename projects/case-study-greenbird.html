@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Bird Case Study | Shibadipta Pal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Specific Styles for Case Study */
+        .case-header {
+            padding: 80px 0 40px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .case-content {
+            padding: 60px 0;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .case-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" class="active">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round">
+                            <span class="icon sun">☀️</span>
+                            <span class="icon moon">🌙</span>
+                        </div>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="case-header" data-aos="fade-down">
+        <div class="container">
+            <h1>Green Bird: Peer-to-Peer Exchange</h1>
+            <div class="case-meta">
+                <span><strong>Role:</strong> Full Stack Developer</span>
+                <span><strong>Year:</strong> 2025</span>
+                <span><strong>Category:</strong> Web Application</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="case-content">
+        <div class="container">
+            <div class="case-image-placeholder">
+                <p>[ Insert High-Quality Project Screenshot Here ]</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="main-content" data-aos="fade-right">
+                    <h3>Project Overview</h3>
+                    <p>Green Bird is a sustainable marketplace platform built with <strong>Laravel</strong> designed to
+                        facilitate the exchange of pre-loved items between users using a virtual points system. The goal
+                        was to reduce waste by encouraging reuse within a local community.</p>
+
+                    <h3 style="margin-top: 30px;">The Challenge</h3>
+                    <p>Building a trustworthy marketplace requires secure user identification and a reliable transaction
+                        system. I needed to ensure that users were legitimate and that the exchange of "points" happened
+                        only when both parties were satisfied.</p>
+
+                    <h3 style="margin-top: 30px;">The Solution</h3>
+                    <p>I implemented a multi-layered security and transaction flow:</p>
+                    <ul class="feature-list" style="margin-top: 15px;">
+                        <li><strong>OTP Verification:</strong> Integrated a custom 6-digit email OTP system to verify
+                            users during registration.</li>
+                        <li><strong>Point-Based Transactions:</strong> Developed a backend logic that deducts points
+                            from the buyer and adds them to the seller only upon confirmation of receipt.</li>
+                        <li><strong>Real-time Notifications:</strong> Created a notification system to handle meeting
+                            requests and pickup times between users.</li>
+                        <li><strong>Social Authentication:</strong> Integrated Laravel Socialite for seamless login via
+                            Google and GitHub.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar" data-aos="fade-left">
+                    <div class="sidebar-box">
+                        <h4>Technologies Used</h4>
+                        <div class="tech-stack">
+                            <span class="skill-item">PHP (Laravel)</span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">Socialite</span>
+                            <span class="skill-item">Bootstrap</span>
+                        </div>
+                        <h4 style="margin-top: 25px;">Key Features</h4>
+                        <ul class="feature-list">
+                            <li>Secure User Auth</li>
+                            <li>Image Uploading</li>
+                            <li>Item Filtering</li>
+                            <li>Transaction History</li>
+                        </ul>
+                        <h4 style="margin-top: 25px;">Links</h4>
+                        <a href="https://github.com/shibu-pal" target="_blank" class="btn btn-git"
+                            style="width: 100%; text-align: center;">View Code on GitHub</a>
+
+                        <a href="https://crystalcareerinstitute.com" target="_blank" class="btn btn-site">
+                            Visit Live Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Shibadipta Pal</h3>
+                <p>Computer Science Student | Full Stack Developer</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Built with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>
